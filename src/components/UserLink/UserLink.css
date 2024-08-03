@@ -1,0 +1,84 @@
+/* frontend/components/UserLink.css */
+
+.masthead {
+  height: 100vh;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+}
+
+.user-container {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #afc0ec;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* Ensure it appears above the background */
+}
+
+.user-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #fff;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link-item {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.link-item h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: #007BFF;
+}
+
+.link-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.link-item a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.link-item a:hover {
+  text-decoration: underline;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: -1; 
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -2; 
+}
