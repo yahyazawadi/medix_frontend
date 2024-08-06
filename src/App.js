@@ -16,7 +16,7 @@ import AdminLinks from './components/admincontrolpanel/adminlinks';
 import UserLinks from './components/UserLink/UserLink';
 import Courses from './components/Courses/Courses';
 import Green from './components/Green/Green';
-import DataFetcher from './Datafetcher';
+import DataFetcher from './DataFetcher';
 
 const App = () => {
   return (
