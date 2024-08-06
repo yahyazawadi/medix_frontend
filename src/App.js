@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useGetDataQuery } from './app/api/apiSlice';
 import TopBar from './components/common/TopBar';
 import AppNavbar from './components/common/NavigationBar';
 import ContactPage from './components/ContactUsPage/ContactPage';
@@ -17,13 +16,9 @@ import AdminLinks from './components/admincontrolpanel/adminlinks';
 import UserLinks from './components/UserLink/UserLink';
 import Courses from './components/Courses/Courses';
 import Green from './components/Green/Green';
+import DataFetcher from './Datafetcher';
 
 const App = () => {
-  const { data, error, isLoading } = useGetDataQuery();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
   return (
     <Router>
       <div>
@@ -43,6 +38,7 @@ const App = () => {
           <Route path="/userlink" element={<UserLinks />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/green" element={<Green />} />
+          <Route path="/data-fetcher" element={<DataFetcher />} /> {/* Add the new route */}
         </Routes>
         <Footer />
       </div>
