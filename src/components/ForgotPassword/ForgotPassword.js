@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:5001/User/request-reset-password', {
+      const response = await fetch('https://medix-backend-k0q1.onrender.com/User/request-reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

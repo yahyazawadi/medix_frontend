@@ -26,7 +26,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5001/backend/data')
+    fetch('https://medix-backend-k0q1.onrender.com/data')
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error('Error fetching data:', error));

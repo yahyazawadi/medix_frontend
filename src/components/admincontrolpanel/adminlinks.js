@@ -16,7 +16,7 @@ function AdminLinks() {
 
   const fetchLinks = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/links');
+      const response = await axios.get('https://medix-backend-k0q1.onrender.com/links');
       setLinks(response.data);
     } catch (error) {
       setError('Failed to fetch links');
@@ -26,7 +26,7 @@ function AdminLinks() {
   const saveLink = async () => {
     if (editingLinkId) {
       try {
-        const response = await axios.put(`http://localhost:5001/links/${editingLinkId}`, {
+        const response = await axios.put(`https://medix-backend-k0q1.onrender.com/links/${editingLinkId}`, {
           title,
           description,
           url
@@ -38,7 +38,7 @@ function AdminLinks() {
       }
     } else {
       try {
-        const response = await axios.post('http://localhost:5001/links', {
+        const response = await axios.post('https://medix-backend-k0q1.onrender.com/links', {
           title,
           description,
           url
@@ -56,7 +56,7 @@ function AdminLinks() {
 
   const deleteLink = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/links/${id}`);
+      await axios.delete(`https://medix-backend-k0q1.onrender.com/links/${id}`);
       setLinks(links.filter(link => link._id !== id));
     } catch (error) {
       setError('Failed to delete link');

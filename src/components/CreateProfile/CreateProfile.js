@@ -17,7 +17,7 @@ function RegisterForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:5001/user', {
+    fetch('https://medix-backend-k0q1.onrender.com/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/user/login', { email, password });
+      const response = await axios.post('https://medix-backend-k0q1.onrender.com/user/login', { email, password });
       if (response.data.success) {
         console.log('تم الدخول');
         acces=1;
@@ -31,7 +31,7 @@ const Login = () => {
       } else {
         setError('كلمة السر أو الإيميل غير صحيحتان');
       }
-      const responsE = await axios.post('http://localhost:5001/admin/login', { email, password });
+      const responsE = await axios.post('https://medix-backend-k0q1.onrender.com/admin/login', { email, password });
       if (responsE.data.success) {
         console.log('Login successful');
         acces=2;  

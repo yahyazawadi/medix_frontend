@@ -13,7 +13,7 @@ function UserLinks() {
 
   const fetchLinks = async () => {
     try {
-      const response = await fetch('http://localhost:5001/links', {
+      const response = await fetch('https://medix-backend-k0q1.onrender.com/links', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

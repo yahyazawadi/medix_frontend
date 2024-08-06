@@ -27,7 +27,7 @@ function ContactPage() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5001/contacts', { 
+            const response = await fetch('https://medix-backend-k0q1.onrender.com/contacts', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
