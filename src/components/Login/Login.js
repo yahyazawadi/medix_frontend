@@ -10,7 +10,6 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   let acces=0;
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!email || !password) {
@@ -19,33 +18,33 @@ const Login = () => {
     } else {
       setError(null);
     }
-
+  
     try {
+      console.log('Attempting login with:', { email, password });
       const response = await axios.post('https://medix-backend-k0q1.onrender.com/user/login', { email, password });
+      console.log('Login response:', response.data);
       if (response.data.success) {
         console.log('تم الدخول');
-        acces=1;
+        acces = 1;
         navigate('/', { state: { acces } });
-        
-        
       } else {
         setError('كلمة السر أو الإيميل غير صحيحتان');
       }
       const responsE = await axios.post('https://medix-backend-k0q1.onrender.com/admin/login', { email, password });
+      console.log('Admin login response:', responsE.data);
       if (responsE.data.success) {
         console.log('Login successful');
-        acces=2;  
-      navigate('/', { state: { acces} });
+        acces = 2;
+        navigate('/', { state: { acces } });
       } else {
         setError('Invalid email or password');
       }
-
     } catch (error) {
       console.error('Error logging in:', error);
       setError('An error occurred during login');
     }
   };
-
+  
   return (
     <header className="masthead">
       <div className="Connection_Status">
