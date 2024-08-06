@@ -26,12 +26,11 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://medix-backend-k0q1.onrender.com/data')
+    fetch('https://medix-backend-k0q1.onrender.com')
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
-
   return (
     <Router>
       <div>
