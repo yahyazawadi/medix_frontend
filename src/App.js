@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
 import { useGetDataQuery } from './app/api/apiSlice';
 import TopBar from './components/common/TopBar';
 import AppNavbar from './components/common/NavigationBar';
@@ -27,30 +25,28 @@ const App = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <Provider store={store}>
-      <Router>
-        <div>
-          <TopBar />
-          <AppNavbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/create-profile" element={<RegisterForm />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/registries" element={<Reports />} />
-            <Route path="/users" element={<Customers />} />
-            <Route path="/adminpanel/adminlinks" element={<AdminLinks />} />
-            <Route path="/userlink" element={<UserLinks />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/green" element={<Green />} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
-    </Provider>
+    <Router>
+      <div>
+        <TopBar />
+        <AppNavbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-profile" element={<RegisterForm />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/registries" element={<Reports />} />
+          <Route path="/users" element={<Customers />} />
+          <Route path="/adminpanel/adminlinks" element={<AdminLinks />} />
+          <Route path="/userlink" element={<UserLinks />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/green" element={<Green />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

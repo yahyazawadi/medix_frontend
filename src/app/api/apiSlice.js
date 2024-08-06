@@ -6,7 +6,7 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
-  baseQuery: baseQuery,
+  baseQuery,
   endpoints: (builder) => ({
     getData: builder.query({
       query: () => '/data', // Assuming your endpoint is /data
