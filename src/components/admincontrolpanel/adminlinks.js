@@ -16,7 +16,7 @@ function AdminLinks() {
 
   const fetchLinks = async () => {
     try {
-      const response = await axios.get('https://medix-backend-k0q1.onrender.com/links');
+      const response = await axios.post('https://medix-backend-k0q1.onrender.com/links/all');
       setLinks(response.data);
     } catch (error) {
       setError('Failed to fetch links');
