@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TopBar from './components/common/TopBar';
 import AppNavbar from './components/common/NavigationBar';
 import ContactPage from './components/ContactUsPage/ContactPage';
@@ -19,37 +19,30 @@ import Green from './components/Green/Green';
 import DataFetcher from './DataFetcher';
 
 const App = () => {
-  const navigate = useNavigate();
-  const [showAdminLinks, setShowAdminLinks] = useState(false);
-
-  useEffect(() => {
-    if (showAdminLinks) {
-      navigate('/'); // Navigate to home path without changing the URL
-    }
-  }, [showAdminLinks, navigate]);
-
   return (
-    <div>
-      <TopBar />
-      <AppNavbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-profile" element={<RegisterForm />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/registries" element={<Reports />} />
-        <Route path="/users" element={<Customers />} />
-        <Route path="/adminpanel/adminlinks" element={<AdminLinks />} />
-        <Route path="/userlink" element={<UserLinks />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/green" element={<Green />} />
-        <Route path="/data-fetcher" element={<DataFetcher />} />
-      </Routes>
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <TopBar />
+        <AppNavbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-profile" element={<RegisterForm />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/registries" element={<Reports />} />
+          <Route path="/users" element={<Customers />} />
+          <Route path="/adminpanel/adminlinks" element={<AdminLinks />} />
+          <Route path="/userlink" element={<UserLinks />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/green" element={<Green />} />
+          <Route path="/data-fetcher" element={<DataFetcher />} /> {/* Add the new route */}
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

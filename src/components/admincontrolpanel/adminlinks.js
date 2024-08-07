@@ -1,14 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminLinks.css';
-import { useNavigate } from 'react-router-dom';
-function AdminLinks() {
-  const navigate = useNavigate();
 
-  const handleAdminLinks = () => {
-    navigate('/adminpanel/adminlinks', { replace: true });
-  };
+function AdminLinks() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
@@ -22,7 +16,7 @@ function AdminLinks() {
 
   const fetchLinks = async () => {
     try {
-      const response = await axios.post('https://medix-backend-k0q1.onrender.com/links/all');
+      const response = await axios.get('https://medix-backend-k0q1.onrender.com/links');
       setLinks(response.data);
     } catch (error) {
       setError('Failed to fetch links');
@@ -116,9 +110,7 @@ function AdminLinks() {
               <button className="edit" onClick={() => startEditing(link)}>Edit</button>
             </div>
           </div>
-
-))}    <button onClick={handleAdminLinks}>Go to Admin Links</button>
-
+        ))}
       </div>
     </div>
   );

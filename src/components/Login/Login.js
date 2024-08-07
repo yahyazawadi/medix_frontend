@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,8 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  let acces = 0;
-
+  let acces=0;
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!email || !password) {
@@ -19,7 +18,7 @@ const Login = () => {
     } else {
       setError(null);
     }
-
+  
     try {
       console.log('Attempting login with:', { email, password });
       const response = await axios.post('https://medix-backend-k0q1.onrender.com/user/login', { email, password });
@@ -31,7 +30,6 @@ const Login = () => {
       } else {
         setError('كلمة السر أو الإيميل غير صحيحتان');
       }
-
       const responsE = await axios.post('https://medix-backend-k0q1.onrender.com/admin/login', { email, password });
       console.log('Admin login response:', responsE.data);
       if (responsE.data.success) {
@@ -46,17 +44,19 @@ const Login = () => {
       setError('An error occurred during login');
     }
   };
-
+  
+  
   return (
     <header className="masthead">
-      <div className="Connection_Status"></div>
+      <div className="Connection_Status">
+      </div>
       <div className="login-container">
         <div className="Log">
           <h2>تسجيل الدخول</h2>
           {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label style={{ direction: 'rtl', textAlign: 'right' }}>الإيميل:</label>
+            <label style={{ direction: 'rtl', textAlign: 'right' }}>:الإيميل</label>
               <input
                 type="email"
                 value={email}
@@ -64,6 +64,7 @@ const Login = () => {
               />
             </div>
             <div className="form-group">
+              
               <label style={{ direction: 'rtl', textAlign: 'right' }}>كلمة السر:</label>
               <input
                 type="password"
@@ -76,17 +77,18 @@ const Login = () => {
             </button>
           </form>
           <p>
-            <Link
-              to="/forgot-password"
-              style={{
-                textAlign: 'center',
-                direction: 'rtl',
-                display: 'block',
-                color: '#1a1aa3'
-              }}
-            >
-              أنسيت كلمة السر؟
-            </Link>
+          <Link 
+  to="/forgot-password" 
+  style={{ 
+    textAlign: 'center', 
+    direction: 'rtl', 
+    display: 'block',  // Ensure the link is a block-level element for text alignment to work
+    color: '#1a1aa3'
+  }}
+>
+  أنسيت كلمة السر؟
+</Link>
+
           </p>
           <hr />
           <p>
