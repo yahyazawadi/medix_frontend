@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import TopBar from './components/common/TopBar';
 import AppNavbar from './components/common/NavigationBar';
 import ContactPage from './components/ContactUsPage/ContactPage';
@@ -18,28 +18,49 @@ import Courses from './components/Courses/Courses';
 import Green from './components/Green/Green';
 import DataFetcher from './DataFetcher';
 
+const AdminControlPanel = ({ setShowAdminLinks }) => {
+  const navigate = useNavigate();
+
+  const handleShowAdminLinks = () => {
+    setShowAdminLinks(true);
+    navigate('/'); // This will keep the URL at the base path
+  };
+
+  return (
+    <div>
+      <button onClick={handleShowAdminLinks}>Go to Admin Links</button>
+    </div>
+  );
+};
+
 const App = () => {
+  const [showAdminLinks, setShowAdminLinks] = useState(false);
+
   return (
     <Router>
       <div>
         <TopBar />
         <AppNavbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/create-profile" element={<RegisterForm />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/registries" element={<Reports />} />
-          <Route path="/users" element={<Customers />} />
-          <Route path="/adminpanel/adminlinks" element={<AdminLinks />} />
-          <Route path="/userlink" element={<UserLinks />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/green" element={<Green />} />
-          <Route path="/data-fetcher" element={<DataFetcher />} /> {/* Add the new route */}
-        </Routes>
+        {showAdminLinks ? (
+          <AdminLinks />
+        ) : (
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-profile" element={<RegisterForm />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/registries" element={<Reports />} />
+            <Route path="/users" element={<Customers />} />
+            <Route path="/adminpanel" element={<AdminControlPanel setShowAdminLinks={setShowAdminLinks} />} />
+            <Route path="/userlink" element={<UserLinks />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/green" element={<Green />} />
+            <Route path="/data-fetcher" element={<DataFetcher />} />
+          </Routes>
+        )}
         <Footer />
       </div>
     </Router>
