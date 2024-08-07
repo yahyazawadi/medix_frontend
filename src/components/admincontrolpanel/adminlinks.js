@@ -1,8 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminLinks.css';
-
+import { useNavigate } from 'react-router-dom';
 function AdminLinks() {
+  const navigate = useNavigate();
+
+  const handleAdminLinks = () => {
+    navigate('/adminpanel/adminlinks', { replace: true });
+  };
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
@@ -110,7 +116,9 @@ function AdminLinks() {
               <button className="edit" onClick={() => startEditing(link)}>Edit</button>
             </div>
           </div>
-        ))}
+
+))}    <button onClick={handleAdminLinks}>Go to Admin Links</button>
+
       </div>
     </div>
   );
