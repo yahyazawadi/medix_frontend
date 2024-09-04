@@ -1,0 +1,41 @@
+
+
+  
+  .custom-dropdown .dropdown-toggle {
+
+    padding: 10px 15px;
+    font-family: 'Amiri', serif;
+    margin-top: -15px;
+    font-size: 21.6px;
+    font-weight: 400;
+    line-height: 32.4px 
+  }
+  
+
+  /* customStyles.css */
+
+.custom-dropdown .dropdown-menu {
+  background-color: transparent;
+  border: none;
+  font-size: 21.6px;
+    font-weight: 400;
+    line-height: 32.4px 
+}
+
+.custom-dropdown .dropdown-item {
+  color: #000;
+  font-size: 1.2em; /* Match this with linkStyle */
+  padding: 10px 15px; /* Match this with linkStyle */
+  font-family: 'Amiri', serif; /* Match this with linkStyle */
+  font-size: 21.6px !important;
+    font-weight: 400;
+    line-height: 32.4px 
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+  font-size: 21.6px;
+    font-weight: 400;
+    line-height: 32.4px 
+}

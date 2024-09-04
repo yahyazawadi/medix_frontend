@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../../assets/climalogo2.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavigationBar.css'; // Import custom CSS
 
 const navBarStyle = {
   background: 'linear-gradient(to bottom, rgb(144, 183, 180), rgb(207, 231, 241))',
@@ -10,118 +13,92 @@ const navBarStyle = {
   color: '#000',
   padding: '10px 0',
   fontFamily: "'Cairo', sans-serif",
-  //marginBottom: "20px"
 };
 
 const mainStyle = {
   color: '#000',
   fontWeight: 'bold',
-  fontSize: '1.6em', // Larger font size for the main brand
+  fontSize: '1.6em',
   padding: '10px 15px',
   fontFamily: "'Cairo', 'Almarai', 'Aref Ruqaa', 'Reem Kufi', 'Amiri', 'Lateef', 'Scheherazade', sans-serif",
 };
 
 const linkStyle = {
   color: '#000',
-  fontSize: '1.2em', // Increased font size
+  fontSize: '1.2em',
   padding: '10px 15px',
-  fontFamily: "Amiri",
-  marginTop: '-55px', // Adjust this value to raise the links
+  fontFamily: 'Amiri',
+  marginTop: '-15px',
+  fontSize: '21.6px',
+    fontWeight: '400',
+    lineHeight: '32.4px' 
 };
 
 function NavigationBar() {
   return (
-    <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>
-        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
-        
-      </Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/" style={linkStyle}>الصفحة الرئيسة</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/services" style={linkStyle}>من نحن؟</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/courses" style={linkStyle}>دوراتنا</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/green" style={linkStyle}>مستقبل أخضر</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login" style={linkStyle}>تسجيل الدخول</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar expand="lg" style={navBarStyle}>
+      <Navbar.Brand as={Link} to="/" style={mainStyle}>
+        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px', marginTop: '-13px', marginRight: '20px' }} />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarNavDropdown" />
+      <Navbar.Collapse id="navbarNavDropdown">
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/" style={linkStyle}>Home</Nav.Link>
+          <Nav.Link as={Link} to="/services" style={linkStyle}>About us</Nav.Link>
+          <Nav.Link as={Link} to="/courses" style={linkStyle}>Courses</Nav.Link>
+          <NavDropdown
+            title={<span style={linkStyle}>Programms</span>}
+            id="navbarScrollingDropdown"
+            className="custom-dropdown"
+          >
+            <NavDropdown.Item href="#">Scientific Research</NavDropdown.Item>
+            <NavDropdown.Item href="#">Entrepreneurship</NavDropdown.Item>
+            <NavDropdown.Item href="#">Green Opportunity</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link as={Link} to="/" style={linkStyle}>MedixPlus</Nav.Link>
+          <Nav.Link as={Link} to="/" style={linkStyle}>Contact Us</Nav.Link>
+          <Nav.Link as={Link} to="/login" style={linkStyle}>Sign Up</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
-
 function AdminNavbar({ onLogout }) {
   return (
-    <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>
-      <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
-        
-      </Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/" style={linkStyle}>Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/create-profile" style={linkStyle}>Create profiles</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/adminpanel/adminlinks" style={linkStyle}>Links</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/users" style={linkStyle}>Users</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/registries" style={linkStyle}>Registries</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login" onClick={onLogout} style={linkStyle}>Logout</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar expand="lg" style={navBarStyle}>
+      <Navbar.Brand as={Link} to="/" style={mainStyle}>
+        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px', marginTop: '-13px', marginRight: '20px' }} />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarNavDropdown" />
+      <Navbar.Collapse id="navbarNavDropdown">
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/" style={linkStyle}>Home</Nav.Link>
+          <Nav.Link as={Link} to="/create-profile" style={linkStyle}>Create profiles</Nav.Link>
+          <Nav.Link as={Link} to="/adminpanel/adminlinks" style={linkStyle}>Links</Nav.Link>
+          <Nav.Link as={Link} to="/users" style={linkStyle}>Users</Nav.Link>
+          <Nav.Link as={Link} to="/registries" style={linkStyle}>Registries</Nav.Link>
+          <Nav.Link as={Link} to="/login" onClick={onLogout} style={linkStyle}>Logout</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
 function UserNavbar({ onLogout }) {
   return (
-    <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>
-      <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
-        
-      </Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/" style={linkStyle}>الصفحة الرئيسة</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/userlink" style={linkStyle}>روابط المحاضرات</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login" onClick={onLogout} style={linkStyle}>تسجيل الخروج</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar expand="lg" style={navBarStyle}>
+      <Navbar.Brand as={Link} to="/" style={mainStyle}>
+        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px', marginTop: '-13px', marginRight: '20px' }} />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarNavDropdown" />
+      <Navbar.Collapse id="navbarNavDropdown">
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/" style={linkStyle}>الصفحة الرئيسة</Nav.Link>
+          <Nav.Link as={Link} to="/userlink" style={linkStyle}>روابط المحاضرات</Nav.Link>
+          <Nav.Link as={Link} to="/login" onClick={onLogout} style={linkStyle}>تسجيل الخروج</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
@@ -138,9 +115,6 @@ function AppNavbar() {
   });
 
   useEffect(() => {
-    console.log("Location Acces: ", locationAcces);
-    console.log("Local Storage Acces: ", localStorage.getItem('acces'));
-
     if (locationAcces) {
       localStorage.setItem('acces', locationAcces);
       if (locationAcces === 1) {
