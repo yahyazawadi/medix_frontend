@@ -69,17 +69,19 @@ button:hover {
     overflow: hidden; 
   }
   
-  .background-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    filter: blur(4px);
-    z-index: -2; 
+
+
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white; /* Text color */
   }
+  
+  
   
   .background-overlay {
     position: absolute;
@@ -99,5 +101,59 @@ button:hover {
   .masthead .lead {
     font-size: 1.25rem;
     font-weight: 300;
+  }
+  
+  .ContactPage__yellow-box {
+    background-color: #afc0ec;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 45vw;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .ContactPage__yellow-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ContactPage__yellow-box label {
+    margin-bottom: 5px;
+  }
+  
+  .ContactPage__yellow-box input,
+  .ContactPage__yellow-box textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .ContactPage__yellow-box button {
+    padding: 10px 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ContactPage__yellow-box button:hover {
+    background-color: darkblue;
+  }
+  
+  .ContactPage__masthead {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: auto !important;
+  }
+  
+  .ContactPage__container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
   }
   

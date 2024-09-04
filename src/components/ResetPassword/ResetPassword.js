@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import './ResetPassword.css'; 
 import backgroundImage from '../../assets/home_pic.png'; 
+import Background from '../BackGround/BackGround';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
@@ -39,6 +40,7 @@ const ResetPassword = () => {
   };
 
   return (
+    <Background>
     <header className="masthead">
       <div className="Reset-Container">
         <h2>Reset Password</h2>
@@ -65,9 +67,10 @@ const ResetPassword = () => {
           <button type="submit">Reset Password</button>
         </form>
       </div>
-      <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-      <div className="background-overlay"></div>
+       
+       
     </header>
+    </Background>
   );
 };
 

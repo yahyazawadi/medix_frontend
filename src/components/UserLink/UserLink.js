@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './UserLink.css';
 import backgroundImage from '../../assets/home_pic.png';
+import Background from '../BackGround/BackGround';
 
 function UserLinks() {
   const [links, setLinks] = useState([]);
@@ -30,6 +31,7 @@ function UserLinks() {
   };
 
   return (
+    <Background>
     <header className="masthead">
       <div className="user-container">
         <h2 className="user-header">Useful Links</h2>
@@ -46,10 +48,11 @@ function UserLinks() {
         </div>
       </div>
 
-      <div className="background-overlay"></div>
+       
             
-            <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+             
     </header>
+    </Background>
     );
 }
 

@@ -1,0 +1,31 @@
+.background-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh ; /* Ensure the container takes at least full viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 60px 0; /* Add padding to prevent content from sticking to edges */
+    box-sizing: border-box; /* Includes padding in height calculation */
+
+}
+
+.doctor-image {
+    position: absolute;
+    bottom: 0%;  /* Position the image at the bottom */
+    left: 45%;   /* Adjust left position as needed */
+    width: auto;
+    max-width: 56%; /* Adjust size as needed */
+    height: auto;
+    z-index: 1;  /* Behind the content */
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure the content is in front of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

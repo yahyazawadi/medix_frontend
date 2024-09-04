@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/climalogo2.png';
 
 const navBarStyle = {
-  backgroundColor: '#afc0ec',
+  background: 'linear-gradient(to bottom, rgb(144, 183, 180), rgb(207, 231, 241))',
+  borderBottom: 'none',
+  boxShadow: 'none',
+  color: '#000',
+  padding: '10px 0',
+  fontFamily: "'Cairo', sans-serif",
+  //marginBottom: "20px"
 };
 
 const mainStyle = {
@@ -16,16 +23,19 @@ const mainStyle = {
 
 const linkStyle = {
   color: '#000',
-
   fontSize: '1.2em', // Increased font size
   padding: '10px 15px',
   fontFamily: "Amiri",
+  marginTop: '-55px', // Adjust this value to raise the links
 };
 
 function NavigationBar() {
   return (
     <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>MedixPlus</Link>
+      <Link className="navbar-brand" to="/" style={mainStyle}>
+        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
+        
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -55,7 +65,10 @@ function NavigationBar() {
 function AdminNavbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>Medix</Link>
+      <Link className="navbar-brand" to="/" style={mainStyle}>
+      <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
+        
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -88,7 +101,10 @@ function AdminNavbar({ onLogout }) {
 function UserNavbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-lg" style={navBarStyle}>
-      <Link className="navbar-brand" to="/" style={mainStyle}>Medix</Link>
+      <Link className="navbar-brand" to="/" style={mainStyle}>
+      <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px',marginTop: '-13px', marginRight: '20px' }} />
+        
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

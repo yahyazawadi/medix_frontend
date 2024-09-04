@@ -1,9 +1,11 @@
 import React from 'react';
 import './Masthead.css';
 import backgroundImage from '../../../assets/home_pic.png'; 
+import Background from '../../BackGround/BackGround';
 
 function Masthead() {
   return (
+    <Background>
     <header className="masthead vh-100 d-flex align-items-center text-center">
       <div className="container">
         <div className="row justify-content-center">
@@ -13,10 +15,11 @@ function Masthead() {
             <p className="lead text-white mt-3"></p>
           </div>
         </div>
-        <div className="background-overlay"></div>
+         
       </div>
-      <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+       
     </header>
+    </Background>
   );
 }
 

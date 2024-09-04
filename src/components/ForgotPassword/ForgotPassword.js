@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../ForgotPassword/ForgotPassword.css';
 import backgroundImage from '../../assets/home_pic.png'; 
+import Background from '../BackGround/BackGround';
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -36,6 +38,7 @@ const ForgotPassword = () => {
   };
 
   return (
+    <Background>
     <header className="masthead">
       <div className="Forgot-Container">
         <h2>Forgot Password</h2>
@@ -49,9 +52,10 @@ const ForgotPassword = () => {
           <button type="submit">Reset Password</button>
         </form>
       </div>
-      <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-      <div className="background-overlay"></div>
+       
+       
     </header>
+    </Background>
   );
 };
 

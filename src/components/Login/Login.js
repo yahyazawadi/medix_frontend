@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import backgroundImage from '../../assets/home_pic.png';
+import Background from '../BackGround/BackGround';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -47,6 +48,7 @@ const Login = () => {
   
   
   return (
+    <Background>
     <header className="masthead">
       <div className="Connection_Status">
       </div>
@@ -103,6 +105,7 @@ const Login = () => {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       ></div>
     </header>
+    </Background>
   );
 };
 

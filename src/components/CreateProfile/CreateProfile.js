@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import backgroundImage from '../../assets/home_pic.png';
 import './CreateProfile.css';
+import Background from '../BackGroundLong/BackGround';
 
 function RegisterForm() {
   const [Data, setFormData] = useState({
@@ -73,10 +74,13 @@ function RegisterForm() {
   };
 
   return (
-    <header className="masthead">
-      <div>
-        <div className="headerForPh"></div>
-        <div className="register-form">
+    <Background>
+    <header className="ContactPage__masthead vh-100 d-flex align-items-center text-center">
+    <div className="ContactPage__container">
+                    <div className="row justify-content-center">
+                        <div className="col-12">
+                            <div className="ContactPage__yellow-box">
+
           <h2>Create Profile</h2>
 
           <form id="register" onSubmit={handleSubmit}>
@@ -102,10 +106,13 @@ function RegisterForm() {
             <input type="text" id="location" name="location" value={Data.location} onChange={handleChange} />
             <button type="submit">Submit</button>
           </form>
+          </div>
+          </div>
         </div>
       </div>
-      <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+      
     </header>
+    </Background>
   );
 }
 

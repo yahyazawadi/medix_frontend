@@ -2,9 +2,11 @@
 import React from 'react';
 import './Courses.css'; 
 import backgroundImage from '../../assets/home_pic.png';
+import Background from '../BackGround/BackGround';
 
 function Courses() {
     return (
+        <Background>
         <header className="masthead vh-100 d-flex align-items-center text-center">
             <div className="container">
                 <div className="row justify-content-center">
@@ -20,10 +22,10 @@ function Courses() {
                         </div>
                     </div>
                 </div>
-                <div className="background-overlay"></div>
             </div>
-            <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+
         </header>
+        </Background>
     );
 }
 
