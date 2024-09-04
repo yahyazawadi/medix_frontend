@@ -18,7 +18,7 @@
   z-index: 2; /* Ensure it's behind the content */
 }
 
-
+/*
 .content {
   position: relative;
   z-index: 1;
@@ -26,8 +26,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: white; /* Text color */
-}
+  color: white; /* Text color }*/
 
 
 
@@ -46,7 +45,7 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #afc0ec;
+  background-color: #7fc242;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;

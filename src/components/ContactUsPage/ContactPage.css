@@ -1,5 +1,5 @@
 .ContactPage__yellow-box {
-  background-color: #afc0ec;
+  background-color: #7fc242;
   padding: 20px;
   border: 2px solid black;
   border-radius: 10px;
@@ -36,7 +36,7 @@
 }
 
 .ContactPage__yellow-box button:hover {
-  background-color: darkblue;
+  background-color: #0c7246;
 }
 
 .ContactPage__masthead {

@@ -18,16 +18,16 @@
   z-index: 1; /* Ensure it's behind the content */
 }
 
-.content {
+/*.content {
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  color: white; /* Text color */
+  height: 100%
+  color: white; /* Text color 
 }
-
+*/
 
 
 /* ServicePage.css */

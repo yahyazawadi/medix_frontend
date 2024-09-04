@@ -6,7 +6,7 @@ body {
 }
 
 .register-form {
-    background-color: #afc0ec;
+    background-color: #7fc242;
     padding: 20px;
     margin: auto;
     width: 725px;
@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0c7246;
 }
 .logo {
     width: 100px;
@@ -70,7 +70,7 @@ button:hover {
   }
   
 
-
+/*
   .content {
     position: relative;
     z-index: 1;
@@ -78,8 +78,8 @@ button:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: white; /* Text color */
-  }
+    color: white; /* Text color 
+  }*/
   
   
   
@@ -104,7 +104,7 @@ button:hover {
   }
   
   .ContactPage__yellow-box {
-    background-color: #afc0ec;
+    background-color: #7fc242;
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
@@ -141,7 +141,7 @@ button:hover {
   }
   
   .ContactPage__yellow-box button:hover {
-    background-color: darkblue;
+    background-color: #0c7246;
   }
   
   .ContactPage__masthead {

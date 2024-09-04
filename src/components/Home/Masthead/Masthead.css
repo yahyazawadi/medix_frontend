@@ -13,7 +13,7 @@
   align-items: center; /* Vertically centers the image */
   justify-content: center; /* Horizontally centers the image */
 }
-
+/*
 .content {
   position: relative;
   z-index: 1;
@@ -21,8 +21,8 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: white; /* Text color */
-}
+  color: white; /* Text color 
+}*/
 
 
 

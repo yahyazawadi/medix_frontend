@@ -18,15 +18,15 @@
 }
 
 /* Styling for the content that overlays the background */
-.content {
+/*.content {
   position: relative;
-  z-index: 2; /* Ensure the content is in front of the image */
+  z-index: 2; /* Ensure the content is in front of the image 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: white; /* Text color */
-}
+  color: white; /* Text color 
+}*/
 
 /* ServicePage.css */
 .Green {
