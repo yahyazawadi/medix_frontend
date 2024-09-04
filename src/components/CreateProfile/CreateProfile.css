@@ -6,7 +6,7 @@ body {
 }
 
 .register-form {
-    background-color: #7fc242;
+    background-color: #128943;
     padding: 20px;
     margin: auto;
     width: 725px;
@@ -104,7 +104,7 @@ button:hover {
   }
   
   .ContactPage__yellow-box {
-    background-color: #7fc242;
+    background-color: #128943;
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;

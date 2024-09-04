@@ -28,10 +28,10 @@ const linkStyle = {
   fontSize: '1.2em',
   padding: '10px 15px',
   fontFamily: 'Amiri',
-  marginTop: '-15px',
+  marginTop: '-50px',
   fontSize: '21.6px',
-    fontWeight: '400',
-    lineHeight: '32.4px' 
+  fontWeight: '400',
+  lineHeight: '32.4px' 
 };
 
 function NavigationBar() {
@@ -47,7 +47,7 @@ function NavigationBar() {
           <Nav.Link as={Link} to="/services" style={linkStyle}>About us</Nav.Link>
           <Nav.Link as={Link} to="/courses" style={linkStyle}>Courses</Nav.Link>
           <NavDropdown
-            title={<span style={linkStyle}>Programms</span>}
+            title={<span style={linkStyle}>Programs</span>}
             id="navbarScrollingDropdown"
             className="custom-dropdown"
           >
