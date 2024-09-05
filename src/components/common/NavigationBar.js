@@ -61,11 +61,11 @@ function NavigationBar({ showSidebar, hideSidebar, isSidebarVisible }) {
       </div>
       <Navbar.Collapse id="navbarNavDropdown">
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/" style={linkStyle}>Home</Nav.Link>
-          <Nav.Link as={Link} to="/services" style={linkStyle}>About us</Nav.Link>
-          <Nav.Link as={Link} to="/courses" style={linkStyle}>Courses</Nav.Link>
+          <Nav.Link as={Link} to="/" className="linkStyle">Home</Nav.Link>
+          <Nav.Link as={Link} to="/services" className="linkStyle">About us</Nav.Link>
+          <Nav.Link as={Link} to="/courses" className="linkStyle">Courses</Nav.Link>
           <NavDropdown
-  title={<span title='inkstyl'>Programs</span>}
+  title={<span  className="linkstyle">Programs</span>}
   id="navbarScrollingDropdown"
   className="custom-dropdown" // Apply the custom-dropdown class
 >
@@ -74,9 +74,9 @@ function NavigationBar({ showSidebar, hideSidebar, isSidebarVisible }) {
             <NavDropdown.Item href="#">Entrepreneurship</NavDropdown.Item>
             <NavDropdown.Item href="#">Green Opportunity</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/" style={linkStyle}>MedixPlus</Nav.Link>
-          <Nav.Link as={Link} to="/" style={linkStyle}>Contact Us</Nav.Link>
-          <Nav.Link as={Link} to="/login" style={linkStyle}>Sign Up</Nav.Link>
+          <Nav.Link as={Link} to="/" className="linkStyle">MedixPlus</Nav.Link>
+          <Nav.Link as={Link} to="/" className="linkStyle">Contact Us</Nav.Link>
+          <Nav.Link as={Link} to="/login" className="linkStyle">Sign Up</Nav.Link>
         </Nav>
       </Navbar.Collapse>
 
@@ -149,12 +149,12 @@ function AdminNavbar({ onLogout }) {
       <Navbar.Toggle aria-controls="navbarNavDropdown" />
       <Navbar.Collapse id="navbarNavDropdown">
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/" style={linkStyle}>Home</Nav.Link>
-          <Nav.Link as={Link} to="/create-profile" style={linkStyle}>Create profiles</Nav.Link>
-          <Nav.Link as={Link} to="/adminpanel/adminlinks" style={linkStyle}>Links</Nav.Link>
-          <Nav.Link as={Link} to="/users" style={linkStyle}>Users</Nav.Link>
-          <Nav.Link as={Link} to="/registries" style={linkStyle}>Registries</Nav.Link>
-          <Nav.Link as={Link} to="/login" onClick={onLogout} style={linkStyle}>Logout</Nav.Link>
+          <Nav.Link as={Link} to="/" className="linkStyle">Home</Nav.Link>
+          <Nav.Link as={Link} to="/create-profile" className="linkStyle">Create profiles</Nav.Link>
+          <Nav.Link as={Link} to="/adminpanel/adminlinks" className="linkStyle">Links</Nav.Link>
+          <Nav.Link as={Link} to="/users" className="linkStyle">Users</Nav.Link>
+          <Nav.Link as={Link} to="/registries" className="linkStyle">Registries</Nav.Link>
+          <Nav.Link as={Link} to="/login" onClick={onLogout} className="linkStyle">Logout</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -170,9 +170,9 @@ function UserNavbar({ onLogout }) {
       <Navbar.Toggle aria-controls="navbarNavDropdown" />
       <Navbar.Collapse id="navbarNavDropdown">
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/" style={linkStyle}>الصفحة الرئيسة</Nav.Link>
-          <Nav.Link as={Link} to="/userlink" style={linkStyle}>روابط المحاضرات</Nav.Link>
-          <Nav.Link as={Link} to="/login" onClick={onLogout} style={linkStyle}>تسجيل الخروج</Nav.Link>
+          <Nav.Link as={Link} to="/" className="linkStyle">الصفحة الرئيسة</Nav.Link>
+          <Nav.Link as={Link} to="/userlink" className="linkStyle">روابط المحاضرات</Nav.Link>
+          <Nav.Link as={Link} to="/login" onClick={onLogout} className="linkStyle">تسجيل الخروج</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

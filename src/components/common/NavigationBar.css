@@ -1,3 +1,49 @@
+.linkStyle  {
+  color: #000 !important;
+  text-decoration: none ; /* fixed invalid color for text-decoration */
+        /* corrected property name */
+  padding: 10px 15px;
+  font-family: 'Amiri';
+  margin-top: -45px;
+  margin-left: 9px;
+  margin-right: 7px;
+  font-weight: 400;
+  line-height: 15px;
+  font-size: 32px; 
+  font-family: 'Zain-Bold', sans-serif;
+
+}
+
+.linkstyle  {
+  color: #000 !important;
+  text-decoration: none ; /* fixed invalid color for text-decoration */
+  font-size: 32px;      /* corrected property name */
+  padding: 10px 15px;
+  font-family: 'Amiri';
+  margin-top: -45px;
+  font-weight: 400;
+  line-height: 32.4px;
+  font-family: 'Zain-Bold', sans-serif;
+
+}
+
+
+/* src/index.css or src/App.css */
+@font-face {
+  font-family: 'Zain-Bold';
+  src: url('../../assets/Zain/Zain-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Apply it globally */
+body {
+  font-family: 'Zain-Bold', sans-serif;
+}
+
+
+
 /* Navbar styling */
 .navbar-header {
   display: flex;
@@ -44,6 +90,8 @@
   background-color: rgba(144, 183, 180, 0.85); /* Updated color */
   padding: 10px 15px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  font-size: 32px; 
+  font-family: 'Zain-Bold', sans-serif;
 }
 
 .dropdown:hover .dropdown-content {
@@ -75,12 +123,7 @@
 }
 
 
-/* Sidebar styles */
 
-
-
-
-/* Dropdown in sidebar */
 
 
 /* Responsive styling */
@@ -100,10 +143,9 @@
 /* Program link styling */
 .nav-link {
   white-space: nowrap; /* Prevents text wrapping */
-  padding-left: 15px;  /* Adjust padding for consistent spacing */
-  padding-right: 15px;
-  font-size: 21.6px;
-  font-weight: 400;
+  padding-left: 30px;  /* Adjust padding for consistent spacing */
+  padding-right: 30px;
+  
   line-height: 32.4px;
   display: inline-block; /* Ensures it stays in one line */
   vertical-align: middle; /* Aligns the link vertically */
@@ -134,19 +176,23 @@
   color: #000;
   font-size: 1.2em;
   padding: 10px 15px;
-  font-family: 'Amiri', serif;
-  font-size: 21.6px !important;
+  font-size: 29px; 
+  font-family: 'Zain-Bold', sans-serif;
   font-weight: 400;
   line-height: 32.4px;
   white-space: nowrap; /* Prevents wrapping */
+  padding-left: 22px;
 }
 
 .custom-dropdown .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #000;
-  font-size: 21.6px;
+  font-size: 29px; 
+  font-family: 'Zain-Bold', sans-serif;
   font-weight: 400;
   line-height: 32.4px;
+  margin-right: -20px;
+  padding-left: 22px;
 }
 
 /* Cancel any other conflicting styles on .program-link */

@@ -1,3 +1,40 @@
+@font-face {
+  font-family: 'Zain-Bold';
+  src: url('../../../assets/Zain/Zain-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OverusedGrotesk-Light';
+  src: url('../../../assets/overused-grotesk-font-family-1725512761-0/OverusedGrotesk-Light-BF64eeac18175cf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ATCArquette-SemiboldItalic';
+  src: url('../../../assets/ATCArquette-SemiboldItalic.woff2') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSerif4-SemiBoldItalic';
+  src: url('../../../assets/SourceSerif4-SemiBoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.welcome{
+  font-family: 'OverusedGrotesk-Light', sans-serif;
+  color: black;
+  font-size: large;
+  z-index: 5;
+  position: absolute;
+  left: 10%;
+}
+
+
+
+
 .masthead {
   position: relative;
   background: transparent;
@@ -13,16 +50,6 @@
   align-items: center; /* Vertically centers the image */
   justify-content: center; /* Horizontally centers the image */
 }
-/*
-.content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: white; /* Text color 
-}*/
 
 
 
