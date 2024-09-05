@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center; /* Align buttons horizontally */
   gap: 20px; /* Space between the buttons */
-  margin-top: 40px; /* Add space between the challenge text and buttons */
+  margin-top: 5.5%; /* Add space between the challenge text and buttons */
   position: relative; /* Ensure buttons are part of normal flow */
 }
 /* Button styles */
