@@ -34,13 +34,19 @@ const linkStyle = {
   lineHeight: '32.4px' 
 };
 
-function NavigationBar() {
+
+
+function NavigationBar({ showSidebar, hideSidebar, isSidebarVisible }) {
   return (
     <Navbar expand="lg" style={navBarStyle}>
-      <Navbar.Brand as={Link} to="/" style={mainStyle}>
-        <img src={logo} alt="ClimaMedix Logo" style={{ width: '320px', marginTop: '-13px', marginRight: '20px' }} />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbarNavDropdown" />
+      <div className="navbar-header">
+        <Navbar.Brand as={Link} to="/" style={mainStyle}>
+          <img src={logo} alt="ClimaMedix Logo" style={{ width: '21.5vw', marginTop: '-13px', marginRight: '20px',
+  ...(window.innerWidth <= 800 && { width: '45vw' })
+}} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarNavDropdown" onClick={showSidebar} />
+      </div>
       <Navbar.Collapse id="navbarNavDropdown">
         <Nav className="ml-auto">
           <Nav.Link as={Link} to="/" style={linkStyle}>Home</Nav.Link>
@@ -60,6 +66,26 @@ function NavigationBar() {
           <Nav.Link as={Link} to="/login" style={linkStyle}>Sign Up</Nav.Link>
         </Nav>
       </Navbar.Collapse>
+
+      {/* Mobile Sidebar */}
+      {isSidebarVisible && (
+        <div className="mobile-sidebar">
+          <ul className="sidebar-links">
+            <li><Link to="/" onClick={hideSidebar}>Home</Link></li>
+            <li><Link to="/services" onClick={hideSidebar}>Services</Link></li>
+            <li><Link to="/courses" onClick={hideSidebar}>Courses</Link></li>
+            <li><Link to="/login" onClick={hideSidebar}>Login</Link></li>
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" onClick={hideSidebar}>Programs ▼</a>
+              <ul className="dropdown-content">
+                <li><Link to="/link1" onClick={hideSidebar}>Link 1</Link></li>
+                <li><Link to="/link2" onClick={hideSidebar}>Link 2</Link></li>
+                <li><Link to="/link3" onClick={hideSidebar}>Link 3</Link></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      )}
     </Navbar>
   );
 }
@@ -102,17 +128,13 @@ function UserNavbar({ onLogout }) {
   );
 }
 
+
 function AppNavbar() {
   const location = useLocation();
   const { acces: locationAcces } = location.state || {};
-  const [userIn, setUserIn] = useState(() => {
-    const savedAcces = localStorage.getItem('acces');
-    return savedAcces === '1';
-  });
-  const [adminIn, setAdminIn] = useState(() => {
-    const savedAcces = localStorage.getItem('acces');
-    return savedAcces === '2';
-  });
+  const [userIn, setUserIn] = useState(() => localStorage.getItem('acces') === '1');
+  const [adminIn, setAdminIn] = useState(() => localStorage.getItem('acces') === '2');
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
 
   useEffect(() => {
     if (locationAcces) {
@@ -131,15 +153,22 @@ function AppNavbar() {
     localStorage.removeItem('acces');
     setUserIn(false);
     setAdminIn(false);
+    setSidebarVisible(false);
   };
 
+  const showSidebar = () => setSidebarVisible(true);
+  const hideSidebar = () => setSidebarVisible(false);
+
   if (userIn) {
-    return <UserNavbar onLogout={handleLogout} />;
+    return <UserNavbar onLogout={handleLogout} showSidebar={showSidebar} hideSidebar={hideSidebar} isSidebarVisible={isSidebarVisible} />;
   } else if (adminIn) {
-    return <AdminNavbar onLogout={handleLogout} />;
+    return <AdminNavbar onLogout={handleLogout} showSidebar={showSidebar} hideSidebar={hideSidebar} isSidebarVisible={isSidebarVisible} />;
   } else {
-    return <NavigationBar />;
+    return <NavigationBar showSidebar={showSidebar} hideSidebar={hideSidebar} isSidebarVisible={isSidebarVisible} />;
   }
 }
 
+
 export default AppNavbar;
+
+
