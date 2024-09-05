@@ -1,59 +1,34 @@
-
-.navbar {
-  padding-top: 10px !important;  /* Add some padding for spacing */
-  padding-bottom: 10px;  /* Optional for bottom padding */
-  position: relative;    /* Ensure it stays properly positioned */
-}
-.logo {
-  width: 21.5vw;
-  margin-top: 10px;
-  margin-right: 20px;
-}
-.navBarStyle{
-  margin-top: 200px;
-}
+/* Navbar styling */
 .navbar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.navbar-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+.navbar-nav .nav-link {
+  color: rgba(0,0,0,.7);
 }
-.navbar-toggler {
-  border: none;
-  background-color: transparent;
-  outline: none;
-}
-.nav-link {
-  white-space: nowrap; /* Prevent text wrapping */
-  padding-left: 15px;  /* Adjust padding for consistent spacing */
-  padding-right: 15px;
-  font-size: 21.6px;
-  font-weight: 400;
-  line-height: 32.4px;
-}
-.navbar-collapse {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Ensures logo and nav items are well spaced */
-  align-items: center;
-  width: 100%;
+.navbar-logo {
+  width: 21.5vw;
+  margin-top: -13px;
+  margin-right: 20px;
 }
 
-/* Style adjustments for sidebar */
+/* Adjust logo size for mobile */
+@media (max-width: 800px) {
+  .navbar-logo {
+    width: 45vw;
+  }
+}
+
+/* Sidebar styling */
 .mobile-sidebar {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 80vw;
-  background-color: rgb(175, 236, 199,0.75);
+  background-color: rgba(144, 183, 180, 0.95); /* Updated color */
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -63,6 +38,19 @@
   padding: 20px;
 }
 
+/* Dropdown in the sidebar */
+.dropdown-content {
+  display: none;
+  background-color: rgba(144, 183, 180, 0.85); /* Updated color */
+  padding: 10px 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Sidebar link styling */
 .sidebar-links {
   list-style: none;
   padding: 0;
@@ -86,17 +74,15 @@
   border-radius: 5px;
 }
 
-/* Dropdown in sidebar */
-.dropdown-content {
-  display: none;
-  background-color:rgb(175, 236, 199,0.5);
-  padding: 10px 15px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-}
 
-.dropdown:click .dropdown-content {
-  display: block;
-}
+/* Sidebar styles */
+
+
+
+
+/* Dropdown in sidebar */
+
+
 /* Responsive styling */
 @media (max-width: 800px) {
   .navbar-nav {
@@ -110,46 +96,64 @@
   .mobile-sidebar {
     display: flex;
   }
-  .logo {
-    width: 10vw;
-  }
 }
-  
-  .custom-dropdown .dropdown-toggle {
+/* Program link styling */
+.nav-link {
+  white-space: nowrap; /* Prevents text wrapping */
+  padding-left: 15px;  /* Adjust padding for consistent spacing */
+  padding-right: 15px;
+  font-size: 21.6px;
+  font-weight: 400;
+  line-height: 32.4px;
+  display: inline-block; /* Ensures it stays in one line */
+  vertical-align: middle; /* Aligns the link vertically */
+}
 
-    padding: 10px 15px;
-    font-family: 'Amiri', serif;
-    margin-top: -50px;
-    font-size: 21.6px;
-    font-weight: 400;
-    line-height: 32.4px 
-  }
-  
-
-  /* customStyles.css */
+/* Dropdown Menu styling */
+.custom-dropdown .dropdown-toggle {
+  padding: 10px 15px;
+  padding-top: 0px;
+  font-family: 'Amiri', serif;
+  margin-top: -60px; /* Adjusts margin for better alignment */
+  font-size: 21.6px;
+  font-weight: 400;
+  line-height: 32.4px;
+  white-space: nowrap; /* Prevents wrapping */
+}
 
 .custom-dropdown .dropdown-menu {
   background-color: transparent;
   border: none;
   font-size: 21.6px;
-    font-weight: 400;
-    line-height: 32.4px 
+  font-weight: 400;
+  line-height: 32.4px;
+  white-space: nowrap; /* Prevents wrapping */
 }
 
 .custom-dropdown .dropdown-item {
   color: #000;
-  font-size: 1.2em; /* Match this with linkStyle */
-  padding: 10px 15px; /* Match this with linkStyle */
-  font-family: 'Amiri', serif; /* Match this with linkStyle */
+  font-size: 1.2em;
+  padding: 10px 15px;
+  font-family: 'Amiri', serif;
   font-size: 21.6px !important;
-    font-weight: 400;
-    line-height: 32.4px 
+  font-weight: 400;
+  line-height: 32.4px;
+  white-space: nowrap; /* Prevents wrapping */
 }
 
 .custom-dropdown .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #000;
   font-size: 21.6px;
-    font-weight: 400;
-    line-height: 32.4px 
+  font-weight: 400;
+  line-height: 32.4px;
+}
+
+/* Cancel any other conflicting styles on .program-link */
+.navbar .program-link,
+.custom-dropdown .program-link,
+.nav-link.program-link {
+  all: unset;
+  display: inline-block; /* Ensure it stays in one line */
+  vertical-align: middle; /* Align vertically */
 }
