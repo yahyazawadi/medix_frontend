@@ -11,7 +11,7 @@ function Masthead() {
         <div className="row justify-content-center">
           <div className="col-12">
             <h1 className="display-3 text-black fw-bold">MedixPlus</h1>
-            <h1 className="display-3 text-black fw-bold">لأجل مستقبل طبي أفضل</h1>
+            <h1 className="display-3 text-black fw-bold"></h1>
             <p className="lead text-white mt-3"></p>
           </div>
         </div>

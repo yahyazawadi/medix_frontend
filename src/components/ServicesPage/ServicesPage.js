@@ -1,14 +1,13 @@
 // ServicesPage.js
 import React from 'react';
 import './ServicePage.css'; 
-import backgroundImage from '../../assets/home_pic.png';
-import Background from '../BackGround/BackGround';
+import Background from '../BackGroundLong/BackGround';
 
 function ServicesPage() {
     return (
         <Background>
-        <header className="masthead vh-100 d-flex align-items-center text-center">
-            <div className="container">
+        <header className="ser-masthead vh-100 d-flex align-items-center text-center">
+            <div className="ser-container">
                 <div className="row justify-content-center">
                     <div className="col-12">
                         <div className="blurry-box">

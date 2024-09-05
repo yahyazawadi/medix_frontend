@@ -2,7 +2,7 @@
 {background-color: #cfe7f1;
     position: relative;
     width: 100%;
-    min-height: 120vh; /* Ensure the container takes at least full viewport height */
+    min-height: 120vh!important; /* Ensure the container takes at least full viewport height */
     overflow: hidden; /* Allow scrolling if content overflows */
     display: flex;
     align-items: center; /* Center the content vertically */
