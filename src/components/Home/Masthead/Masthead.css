@@ -5,13 +5,13 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'OverusedGrotesk-Light';
+  font-family: 'Grotesk';
   src: url('../../../assets/overused-grotesk-font-family-1725512761-0/OverusedGrotesk-Light-BF64eeac18175cf.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'ATCArquette-SemiboldItalic';
+  font-family: 'ATC';
   src: url('../../../assets/ATCArquette-SemiboldItalic.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -23,24 +23,52 @@
   font-style: normal;
 }
 
-.welcome{
+
+.welcome {
   font-family: 'OverusedGrotesk-Light', sans-serif;
-  color: black;
-  font-size: large;
-  z-index: 5;
-  position: absolute;
-  left: 10%;
+  font-size: 220%;
+  color: rgb(13, 114, 70);
+  position: absolute; /* Keep absolute */
+  top: 13%; /* Center vertically */
+  left: 3%; /* Center horizontally */
+  /*transform: translate(-50%, -50%); /* Adjust to center the text */
+  z-index: 10; /* Ensure it stays on top */
 }
+.healthcare{
+  margin-top:3%;
+  font-family: 'ATC', sans-serif;
+  font-size: 275%;
+  width:55%;
+  color: black;
+  position: absolute; /* Keep absolute */
+  top: 16%; /* Center vertically */
+  left: 3%; /* Center horizontally */
+ /* transform: translate(-50%, -50%); */
+  z-index: 10; /* Ensure it stays on top */}
 
-
-
+.challenge{
+  margin-top:3%;
+  width:50%;
+  font-family: 'Grotesk', sans-serif;
+  font-size: 120%;
+  color: rgb(44, 149, 74);
+  position: absolute; /* Keep absolute */
+  top: 45%; /* Center vertically */
+  left: 3%; /* Center horizontally */
+  /*transform: translate(-50%, -50%); */
+  z-index: 10; /* Ensure it stays on top */
+}
 
 .masthead {
+  height: 100vh;
+  width: 100vw;
   position: relative;
-  background: transparent;
+  /*background: transparent;*/
   z-index: 2;
-  overflow: hidden; 
+  /* Remove overflow: hidden */
+  overflow: visible; /* or remove this line */
 }
+
 .background-container {
   background-color: #cfe7f1; /* Your desired background color */
   position: relative; /* Allows positioning of the doctor image */

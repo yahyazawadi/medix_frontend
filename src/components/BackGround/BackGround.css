@@ -13,10 +13,10 @@
 
 .doctor-image {
     position: absolute;
-    bottom: 0%;  /* Position the image at the bottom */
-    left: 45%;   /* Adjust left position as needed */
+    bottom: -3.5%;  /* Position the image at the bottom */
+    left: 44%;   /* Adjust left position as needed */
     width: auto;
-    max-width: 56%; /* Adjust size as needed */
+    max-width: 57%; /* Adjust size as needed */
     height: auto;
     z-index: 1;  /* Behind the content */
 }
