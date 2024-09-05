@@ -7,8 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavigationBar.css'; // Import custom CSS
 
 const navBarStyle = {
-  background: 'linear-gradient(to bottom, rgb(144, 183, 180), rgb(207, 231, 241))',
-  borderBottom: 'none',
+  background: 'linear-gradient(to bottom, rgb(144, 199, 185), rgb(207, 231, 241))',  borderBottom: 'none',
   boxShadow: 'none',
   color: '#000',
   padding: '10px 0',

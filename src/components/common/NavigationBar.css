@@ -1,5 +1,5 @@
 .linkStyle  {
-  color: #000 !important;
+  color: #434343 !important;
   text-decoration: none ; /* fixed invalid color for text-decoration */
         /* corrected property name */
   padding: 10px 15px;
@@ -15,7 +15,7 @@
 }
 
 .linkstyle  {
-  color: #000 !important;
+  color: #434343 !important;
   text-decoration: none ; /* fixed invalid color for text-decoration */
   font-size: 32px;      /* corrected property name */
   padding: 10px 15px;
