@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminLinks.css';
+import { useNavigate } from 'react-router-dom';
 
 function AdminLinks() {
   const [title, setTitle] = useState('');
@@ -9,24 +10,38 @@ function AdminLinks() {
   const [links, setLinks] = useState([]);
   const [error, setError] = useState('');
   const [editingLinkId, setEditingLinkId] = useState(null);
-
+  const navigate = useNavigate();
+  const [adminIn, setAdminIn] = useState(() => localStorage.getItem('acces') === '2');
   useEffect(() => {
     fetchLinks();
   }, []);
 
   const fetchLinks = async () => {
     try {
-      const response = await axios.get('https://medix-backend-k0q1.onrender.com/links');
+      const response = await axios.get('https://medix-backend-k0q1.onrender.com//links');
       setLinks(response.data);
     } catch (error) {
       setError('Failed to fetch links');
     }
   };
 
+  useEffect(() => {
+    fetchLinks(); // Now fetchLinks is accessible here
+
+    if (!adminIn) {
+      // Redirect non-admins to an error or unauthorized page
+      navigate('/login'); // Or navigate('/login') if you want to redirect to login
+    }
+  }, [adminIn, navigate]);
+
+  if (!adminIn) {
+    return <div>Unauthorized access. Admins only.</div>;
+  }
+
   const saveLink = async () => {
     if (editingLinkId) {
       try {
-        const response = await axios.put(`https://medix-backend-k0q1.onrender.com/links/${editingLinkId}`, {
+        const response = await axios.put(`https://medix-backend-k0q1.onrender.com//links/${editingLinkId}`, {
           title,
           description,
           url
@@ -38,7 +53,7 @@ function AdminLinks() {
       }
     } else {
       try {
-        const response = await axios.post('https://medix-backend-k0q1.onrender.com/links', {
+        const response = await axios.post('https://medix-backend-k0q1.onrender.com//links', {
           title,
           description,
           url
@@ -56,7 +71,7 @@ function AdminLinks() {
 
   const deleteLink = async (id) => {
     try {
-      await axios.delete(`https://medix-backend-k0q1.onrender.com/links/${id}`);
+      await axios.delete(`https://medix-backend-k0q1.onrender.com//links/${id}`);
       setLinks(links.filter(link => link._id !== id));
     } catch (error) {
       setError('Failed to delete link');

@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './UserLink.css';
 import backgroundImage from '../../assets/home_pic.png';
 import Background from '../BackGround/BackGround';
+import { useNavigate } from 'react-router-dom';
+
 
 function UserLinks() {
+
+
+
+  
   const [links, setLinks] = useState([]);
   const [error, setError] = useState(null);
   const token = localStorage.getItem('token');
-
-  useEffect(() => {
-    fetchLinks();
-  }, []);
-
   const fetchLinks = async () => {
     try {
-      const response = await fetch('https://medix-backend-k0q1.onrender.com/links', {
+      const response = await fetch('https://medix-backend-k0q1.onrender.com//links', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -29,6 +30,24 @@ function UserLinks() {
       setError(error.message);
     }
   };
+  useEffect(() => {
+    fetchLinks();
+  }, []);
+  const navigate = useNavigate();
+  const [userIn, setUserIn] = useState(() => localStorage.getItem('acces') === '1');
+  const [adminIn, setAdminIn] = useState(() => localStorage.getItem('acces') === '2');
+
+  useEffect(() => {
+      if (!userIn && !adminIn) {
+          // Redirect if neither user nor admin is logged in
+          navigate('/login'); // Or navigate('/login')
+      }
+  }, [userIn, adminIn, navigate]);
+
+  if (!userIn && !adminIn) {
+      return <div>Unauthorized access. Admins or users only.</div>;
+  }
+  
 
   return (
     <Background>

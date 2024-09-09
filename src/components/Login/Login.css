@@ -1,5 +1,4 @@
 .login-container {
- 
   max-width: 400px;
   margin: 100px auto;
   width: 390px;
@@ -8,14 +7,13 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #128943;
-  position: relative; 
-
+  position: relative;
 }
 .masthead {
   height: 100vh;
-  align-items: center; 
-  justify-content: center; 
-  flex: 0 1 auto; 
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
 }
 
 /* Apply RTL direction and right alignment only to elements with the .rtl-text class */
@@ -37,15 +35,12 @@
   margin-bottom: 5px;
 }
 
-
-.input
- {
+.input {
   width: 100%;
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-
 }
 
 .submit-button {
@@ -83,7 +78,7 @@
 .background-image {
   position: absolute;
   bottom: 10%; /* 10% from the bottom of the container */
-  left: 20%;   /* 20% from the left of the container */
+  left: 20%; /* 20% from the left of the container */
   width: auto; /* Maintain the aspect ratio */
   height: auto; /* Maintain the aspect ratio */
   max-width: 100%; /* Ensure the image doesn't overflow horizontally */
@@ -105,7 +100,6 @@
   color: white; /* Text color 
 }*/
 
-
 .background-overlay {
   position: absolute;
   top: 0;
@@ -113,11 +107,9 @@
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: -2; 
+  z-index: -2;
 }
 
-.Connection_Username
-{
-color: #fff;
-
+.Connection_email {
+  color: #fff;
 }

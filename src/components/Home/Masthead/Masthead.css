@@ -10,6 +10,10 @@
 /* Button styles */
 .btn1, .btn2{
   padding: 10px 25px; /* Increase padding for width and height */
+  display: flex; /* Make the button a flex container */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  text-align: center; 
 
 }
 .btn1 {
@@ -80,7 +84,7 @@
 }
 @font-face {
   font-family: 'SourceSerif4-SemiBoldItalic';
-  src: url('../../../assets/SourceSerif4-SemiBoldItalic.ttf') format('truetype');
+  src: url('../../../assets/ALKATIP Basma Tom Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

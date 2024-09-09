@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://medix-backend-k0q1.onrender.com',
+  baseUrl: 'https://medix-backend-k0q1.onrender.com/',
   credentials: 'include', // Include credentials like cookies in requests
 });
 

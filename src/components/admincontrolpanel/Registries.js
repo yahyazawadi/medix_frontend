@@ -1,19 +1,21 @@
-// Reports.js
 import React, { useState, useEffect } from 'react';
 import "./Drivers.css";
+import { useNavigate } from 'react-router-dom';
 
 function Reports() {
   const [reports, setReports] = useState([]);
   const [selectedReport, setSelectedReport] = useState(null);
   const [error, setError] = useState(null);
+  const [adminIn, setAdminIn] = useState(() => localStorage.getItem('acces') === '2');
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchReports();
   }, []);
-
+  
   const fetchReports = async () => {
     try {
-      const response = await fetch('https://medix-backend-k0q1.onrender.com/contacts'); 
+      const response = await fetch('https://medix-backend-k0q1.onrender.com//contacts'); 
       if (!response.ok) {
         throw new Error('Failed to fetch reports');
       }
@@ -29,6 +31,16 @@ function Reports() {
   const showReportDetails = (report) => {
     setSelectedReport(report);
   };
+
+  useEffect(() => {
+    if (!adminIn) {
+      navigate('/login'); // Redirect to login if not an admin
+    }
+  }, [adminIn, navigate]);
+
+  if (!adminIn) {
+    return <div>Unauthorized access. Admins only.</div>;
+  }
 
   return (
     <div className="containerH">
@@ -61,6 +73,12 @@ function Reports() {
             <p><strong>Gender:</strong> {selectedReport.gender}</p>
             <p><strong>Location:</strong> {selectedReport.location}</p>
             <p><strong>Date:</strong> {new Date(selectedReport.createdAt).toLocaleString()}</p>
+            <p><strong>Major:</strong> {selectedReport.major}</p>
+            <p><strong>University:</strong> {selectedReport.university}</p>
+            <p><strong>Academic Level:</strong> {selectedReport.academicLevel}</p>
+            {selectedReport.academicLevel === 'University Student' && (
+              <p><strong>Year of University:</strong> {selectedReport.yearOfUniversity}</p>
+            )}
           </div>
         ) : (
           <p>Select a report to see details</p>

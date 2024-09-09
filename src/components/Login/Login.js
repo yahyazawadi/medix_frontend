@@ -22,7 +22,7 @@ const Login = () => {
   
     try {
       console.log('Attempting login with:', { email, password });
-      const response = await axios.post('https://medix-backend-k0q1.onrender.com/user/login', { email, password });
+      const response = await axios.post('https://medix-backend-k0q1.onrender.com//user/login', { email, password });
       console.log('Login response:', response.data);
       if (response.data.success) {
         console.log('تم الدخول');
@@ -31,7 +31,7 @@ const Login = () => {
       } else {
         setError('كلمة السر أو الإيميل غير صحيحتان');
       }
-      const responsE = await axios.post('https://medix-backend-k0q1.onrender.com/admin/login', { email, password });
+      const responsE = await axios.post('https://medix-backend-k0q1.onrender.com//admin/login', { email, password });
       console.log('Admin login response:', responsE.data);
       if (responsE.data.success) {
         console.log('Login successful');
@@ -54,11 +54,11 @@ const Login = () => {
       </div>
       <div className="login-container">
         <div className="Log">
-          <h2>تسجيل الدخول</h2>
+          <h2>Log In</h2>
           {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-            <label style={{ direction: 'rtl', textAlign: 'right' }}>:الإيميل</label>
+            <label style={{ direction: 'rtl', textAlign: 'left' }}>:Email</label>
               <input
                 type="email"
                 value={email}
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
             <div className="form-group">
               
-              <label style={{ direction: 'rtl', textAlign: 'right' }}>كلمة السر:</label>
+              <label style={{ direction: 'rtl', textAlign: 'left' }}>:Password</label>
               <input
                 type="password"
                 value={password}
@@ -75,7 +75,7 @@ const Login = () => {
               />
             </div>
             <button type="submit" className="submit-button">
-              تسجيل الدخول
+              log in
             </button>
           </form>
           <p>
@@ -88,14 +88,14 @@ const Login = () => {
     color: '#1a1aa3'
   }}
 >
-  أنسيت كلمة السر؟
+  ?did you forget your password
 </Link>
 
           </p>
           <hr />
           <p>
             <Link to="/contact">
-              <button className="RegisterForm">!أنشئ حسابًا</button>
+              <button className="RegisterForm">make a new account!</button>
             </Link>
           </p>
         </div>

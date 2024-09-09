@@ -12,7 +12,11 @@ function ContactPage() {
         mobileNumber: '',
         dateOfBirth: '',
         gender: '',
-        location: ''
+        location: '',
+        major: '',
+        university: '',
+        academicLevel: '',
+        yearOfUniversity: ''
     });
 
     const handleChange = (e) => {
@@ -27,7 +31,7 @@ function ContactPage() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://medix-backend-k0q1.onrender.com/contacts', { 
+            const response = await fetch('https://medix-backend-k0q1.onrender.com//contacts', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,7 +50,11 @@ function ContactPage() {
                     mobileNumber: '',
                     dateOfBirth: '',
                     gender: '',
-                    location: ''
+                    location: '',
+                    major: '',
+                    university: '',
+                    academicLevel: '',
+                    yearOfUniversity: ''
                 });
             } else {
                 const errorData = await response.json();
@@ -102,6 +110,28 @@ function ContactPage() {
                                         <label htmlFor="location">Location:</label>
                                         <input type="text" className="ContactPage__form-control" id="location" name="location" value={formData.location} onChange={handleChange} />
                                     </div>
+                                    <div className="ContactPage__form-group">
+                                        <label htmlFor="major">Major:</label>
+                                        <input type="text" className="ContactPage__form-control" id="major" name="major" value={formData.major} onChange={handleChange} />
+                                    </div>
+                                    <div className="ContactPage__form-group">
+                                        <label htmlFor="university">University:</label>
+                                        <input type="text" className="ContactPage__form-control" id="university" name="university" value={formData.university} onChange={handleChange} />
+                                    </div>
+                                    <div className="ContactPage__form-group">
+                                        <label htmlFor="academicLevel">Academic Level:</label>
+                                        <select className="ContactPage__form-control" id="academicLevel" name="academicLevel" value={formData.academicLevel} onChange={handleChange}>
+                                            <option value="">Select Academic Level</option>
+                                            <option value="University Student">University Student</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    {formData.academicLevel === 'University Student' && (
+                                        <div className="ContactPage__form-group">
+                                            <label htmlFor="yearOfUniversity">Year of University:</label>
+                                            <input type="number" className="ContactPage__form-control" id="yearOfUniversity" name="yearOfUniversity" value={formData.yearOfUniversity} onChange={handleChange} />
+                                        </div>
+                                    )}
                                     <button type="submit" className="ContactPage__btn">Submit</button>
                                 </form>
                             </div>
