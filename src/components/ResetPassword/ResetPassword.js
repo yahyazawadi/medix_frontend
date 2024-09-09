@@ -19,7 +19,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await fetch('https://medix-backend-k0q1.onrender.com//User/reset-password', {
+      const response = await fetch('https://medix-backend-k0q1.onrender.com/User/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

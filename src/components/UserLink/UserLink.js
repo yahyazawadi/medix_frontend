@@ -15,7 +15,7 @@ function UserLinks() {
   const token = localStorage.getItem('token');
   const fetchLinks = async () => {
     try {
-      const response = await fetch('https://medix-backend-k0q1.onrender.com//links', {
+      const response = await fetch('https://medix-backend-k0q1.onrender.com/links', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

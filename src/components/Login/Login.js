@@ -22,7 +22,7 @@ const Login = () => {
   
     try {
       console.log('Attempting login with:', { email, password });
-      const response = await axios.post('https://medix-backend-k0q1.onrender.com//user/login', { email, password });
+      const response = await axios.post('https://medix-backend-k0q1.onrender.com/user/login', { email, password });
       console.log('Login response:', response.data);
       if (response.data.success) {
         console.log('تم الدخول');
@@ -31,7 +31,7 @@ const Login = () => {
       } else {
         setError('كلمة السر أو الإيميل غير صحيحتان');
       }
-      const responsE = await axios.post('https://medix-backend-k0q1.onrender.com//admin/login', { email, password });
+      const responsE = await axios.post('https://medix-backend-k0q1.onrender.com/admin/login', { email, password });
       console.log('Admin login response:', responsE.data);
       if (responsE.data.success) {
         console.log('Login successful');

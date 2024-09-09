@@ -15,7 +15,7 @@ function Reports() {
   
   const fetchReports = async () => {
     try {
-      const response = await fetch('https://medix-backend-k0q1.onrender.com//contacts'); 
+      const response = await fetch('https://medix-backend-k0q1.onrender.com/contacts'); 
       if (!response.ok) {
         throw new Error('Failed to fetch reports');
       }

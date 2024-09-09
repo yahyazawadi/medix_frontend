@@ -26,7 +26,7 @@ function RegisterForm() {
     // Log the data being sent
     console.log('Data being sent:', Data);
 
-    fetch('https://medix-backend-k0q1.onrender.com//user', {
+    fetch('https://medix-backend-k0q1.onrender.com/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
