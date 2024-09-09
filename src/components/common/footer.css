@@ -1,0 +1,87 @@
+.footer {
+    background-color: rgb(105, 133, 108);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Change to column to stack content */
+    justify-content: flex-start; /* Keep content at the top */
+    align-items: center; /* Center content horizontally */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.about-us {
+    font-family: 'Zain-Bold', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-title {
+    font-family: 'Zain-Bold', sans-serif;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    padding-top: 12.5vh;
+}
+
+.logon {
+    width: 20px;
+    height: auto;
+}
+
+.links ul {
+    font-family: 'Zain-Bold', sans-serif;
+    list-style: none;
+    padding: 0;
+}
+
+.links ul li {
+    margin-bottom: 5px;
+}
+
+.links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px; /* Adds space above the credits */
+    width: 100%; /* Ensures it spans the entire width */
+}
+
+.footer-bottom p {
+    font-family: 'Zain-Bold', sans-serif;
+    margin: 0;
+    font-size: h5;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-section {
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+}

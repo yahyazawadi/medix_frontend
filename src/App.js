@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/green" element={<Green />} />
           <Route path="/data-fetcher" element={<DataFetcher />} /> {/* Add the new route */}
         </Routes>
-        
+        <Footer />
       </div>
     </Router>
   );
