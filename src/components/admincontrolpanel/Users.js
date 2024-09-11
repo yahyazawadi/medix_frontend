@@ -68,7 +68,7 @@ function Users() {
   const showUserDetails = (user) => {
     setSelectedUser(user);
     setUpdatedUser(user);  // Initialize updatedUser with selectedUser
-    setIsEditing(false);  // Exit edit mode when switching users
+    setIsEditing(false);  // Exit edit mode when switching users fuck you
   };
 
   const handleDelete = async (id) => {
